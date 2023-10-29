@@ -19,3 +19,6 @@
 
 ## Please note
 - that it likely won't work with multiple monitors
+
+## How it looks like
+![uwu](preview.png)
