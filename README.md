@@ -2,10 +2,9 @@
 - It's just the overview widget from [my dotfiles](https://github.com/end-4/dots-hyprland/tree/illogical-impulse)
 
 ## Installation
-- Install [AGS](https://github.com/Aylur/ags/wiki/installation) 1.5.0 (or git that's after 1.4.0)
+- Install [AGS](https://github.com/Aylur/ags/wiki/installation) latest version MANUALLY (see its wiki for instruction) (aur package is very commonly out of date)
 > [!IMPORTANT]
-> since ags introduces breaking changes like every week, it is recommended that you install the correct version
-> (so you might have to install manually)
+> just be aware that ags breaks a lot. this might not work after a while not updated
 
 - Copy the contents of this repo to home folder
 - Run `ags`. You might wanna add it as an exec-once in your Hyprland config.
