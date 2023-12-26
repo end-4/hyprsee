@@ -1,7 +1,40 @@
-// Transparent version
+///////////// COLOR MODIFICATIONS /////////////
+// Material colors provide excellent readability, but can be uninteresting.
+// This is an attempt to improve that.
+$transparency_enabled: false;
+
+@if $transparency_enabled ==false {
+    @if $darkmode ==true {
+        $background: mix(mix($background, $primary, 94%), #000000, 50%);
+        $surface: mix($surface, $primaryContainer, 98%);
+        $surfaceVariant: mix($surfaceVariant, #000000, 55%);
+    }
+
+    @if $darkmode ==false {
+        $background: mix($background, $primary, 87%);
+        $surface: mix($surface, $primary, 93%);
+        $surfaceVariant: mix($surfaceVariant, #FFFFFF, 55%);
+    }
+}
+
+@if $transparency_enabled ==true {
+    @if $darkmode ==true {
+        $background: mix(mix($background, $primary, 94%), #000000, 50%);
+        $surface: mix($surface, $primaryContainer, 98%);
+        $surfaceVariant: mix($surfaceVariant, #000000, 55%);
+    }
+
+    @if $darkmode ==false {
+        $background: mix($background, $primary, 94%);
+        $surface: mix($surface, $primary, 93%);
+        $surfaceVariant: mix($surfaceVariant, #FFFFFF, 55%);
+    }
+}
+
+// Amounts
 $transparentize_amount: 0.3;
 $transparentize_surface_amount_less: 0.6;
-$transparentize_surface_amount_less_less: 0.35;
+$transparentize_surface_amount_less_less: 0.55;
 $transparentize_surface_amount: 0.7;
 $transparentize_surface_amount_more: 0.8;
 $transparentize_surface_amount_subtract_surface: $transparentize_surface_amount - $transparentize_amount;
@@ -10,10 +43,14 @@ $transparentize_surface_amount_subtract_surface: $transparentize_surface_amount 
     // Less transparency
     $transparentize_amount: 0.15;
     $transparentize_surface_amount_less: 0.5;
-    $transparentize_surface_amount_less_less: 0.3;
-    $transparentize_surface_amount: 0.6;
-    $transparentize_surface_amount_more: 0.7;
+    $transparentize_surface_amount_less_less: 0.55;
+    $transparentize_surface_amount: 0.69;
+    $transparentize_surface_amount_more: 0.9;
     $transparentize_surface_amount_subtract_surface: $transparentize_surface_amount - $transparentize_amount;
+}
+
+@if $transparency_enabled ==false {
+    $transparentize_amount: 0;
 }
 
 // Extended material
@@ -30,7 +67,7 @@ $onSuccessContainer: #0c1f13;
     $onSuccessContainer: #d1e9d6;
 }
 
-// Transparent material
+// Transparent versions
 $t_primary: transparentize($primary, $transparentize_amount);
 $t_onPrimary: transparentize($onPrimary, $transparentize_amount);
 $t_primaryContainer: transparentize($primaryContainer, $transparentize_amount);
@@ -72,8 +109,20 @@ $t_onSuccess: transparentize($onError, $transparentize_amount);
 $t_successContainer: transparentize($errorContainer, $transparentize_amount);
 $t_onSuccessContainer: transparentize($onErrorContainer, $transparentize_amount);
 
-// Common stuff
+// Others
 $hovercolor: mix($t_surface, $t_onSurface, 50%);
 $activecolor: mix($t_surface, $t_onSurface, 30%);
 $subtext: mix($onBackground, $background, 70%);
 $actiontext: mix($onBackground, $background, 85%);
+
+// Terminal colors
+$termbg: mix($t_surfaceVariant, $t_onSurfaceVariant, 80%);
+$termfg: $onSurfaceVariant;
+$term0: $t_background;
+$term1: $error;
+$term2: $inversePrimary;
+$term3: $onPrimaryContainer;
+$term4: $onPrimaryContainer;
+$term5: $onSecondaryContainer;
+$term6: $primary;
+$term7: $onSurfaceVariant;

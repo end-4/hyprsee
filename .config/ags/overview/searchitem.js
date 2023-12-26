@@ -1,8 +1,5 @@
 const { Gdk, Gtk } = imports.gi;
 import { App, Service, Utils, Widget } from '../imports.js';
-const { execAsync, exec } = Utils;
-import { setupCursorHover, setupCursorHoverAim } from "./cursorhover.js";
-import { MaterialIcon } from './materialicon.js';
 
 export const searchItem = ({ materialIconName, name, actionName, content, onActivate }) => {
     const actionText = Widget.Revealer({
@@ -36,13 +33,13 @@ export const searchItem = ({ materialIconName, name, actionName, content, onActi
                             vertical: true,
                             children: [
                                 Widget.Label({
-                                    halign: 'start',
+                                    hpack: 'start',
                                     className: 'overview-search-results-txt txt txt-smallie txt-subtext',
                                     label: `${name}`,
                                     truncate: "end",
                                 }),
                                 Widget.Label({
-                                    halign: 'start',
+                                    hpack: 'start',
                                     className: 'overview-search-results-txt txt txt-norm',
                                     label: `${content}`,
                                     truncate: "end",

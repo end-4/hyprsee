@@ -1,9 +1,9 @@
 import { Widget } from '../imports.js';
-import { SearchAndWindows } from "./overviewcontent.js";
+import { SearchAndWindows } from "./overview.js";
 
 export default () => Widget.Window({
     name: 'overview',
-    exclusive: false,
+    exclusivity: 'normal',
     focusable: true,
     popup: true,
     visible: false,
